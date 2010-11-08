@@ -1,8 +1,14 @@
 package org.agile.grenoble.gui;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import org.agile.grenoble.data.AnswersStorage;
 import org.agile.grenoble.questions.QuestionsType;
@@ -72,18 +78,18 @@ public class NokiaControler implements  ActionListener{
 	 */
 //	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		if (currentQuestionIndex == iQuestions.sizeOfQuestionArray() -1 ) {
-			iNokiaSwing.TerminateTest();
+		if (currentQuestionIndex < iQuestions.sizeOfQuestionArray()  ) {
+			currentQuestionIndex++;
+			boolean isLast = ( currentQuestionIndex == iQuestions.sizeOfQuestionArray()-1); 
+			iNokiaSwing.nextQuestion(currentQuestionIndex,isLast);
+		} else {
+			iNokiaSwing.terminateTest();
 			try {
 				storage.storeAnswers(iQuestions, currentUser.getId());
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
-			currentQuestionIndex++;
-			boolean isLast = ( currentQuestionIndex == iQuestions.sizeOfQuestionArray()-1); 
-			iNokiaSwing.nextQuestion(currentQuestionIndex,isLast);
 		}
 	}
 
@@ -105,8 +111,8 @@ public class NokiaControler implements  ActionListener{
 			}
 		}
 		
-		return user ; 
+		return user; 
 	}
 	
-	
+
 }
