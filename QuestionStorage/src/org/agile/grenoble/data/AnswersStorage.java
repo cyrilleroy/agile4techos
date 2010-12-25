@@ -28,8 +28,8 @@ public class AnswersStorage {
 	protected static final String INSERT_INTO_NOKIA_TEST_VERSIONS = MessageFormat.format(
 			"insert into NokiaTest.versions (aVersion) values ({0})",
 			schemaVersion);
-	protected static final String SELECT_AN_ID_A_NAME_AN_EMAIL_FROM_NOKIATEST_SURVEYS = "Select anId, aName, anEmail from nokiatest.surveys where aName=''{0}'' ;";
-	protected static final String INSERT_INTO_NOKIATEST_SURVEYS_A_NAME_AN_EMAIL = "INSERT INTO nokiatest.surveys (aName,anEmail) VALUES (''{0}'',''{1}'');";
+	protected static final String SELECT_AN_ID_A_NAME_AN_EMAIL_FROM_NOKIATEST_SURVEYS = "Select anId, aName, anEmail from NokiaTest.surveys where aName=''{0}'' ;";
+	protected static final String INSERT_INTO_NOKIATEST_SURVEYS_A_NAME_AN_EMAIL = "INSERT INTO NokiaTest.surveys (aName,anEmail) VALUES (''{0}'',''{1}'');";
 	
 	protected Connection getConnection() {
 		if (conn == null ) {
