@@ -14,17 +14,21 @@ public class NokiaControlerTest {
 
 	@Test
 	public void actionPerformed() throws Exception {
+		NokiaControler nokiaControler = new NokiaControler();
+
 		QuestionsType questionsType = mock(QuestionsType.class);
+		when(questionsType.sizeOfQuestionArray()).thenReturn(7);
+
 		AnswersStorage answersStorage = mock(AnswersStorage.class);
 		User user = mock(User.class);
-		when(questionsType.sizeOfQuestionArray()).thenReturn(7);
 		NokiaSwing nokiaSwing = mock(NokiaSwing.class);
-		NokiaControler nokiaControler = new NokiaControler();
+
 		nokiaControler.setStorage(answersStorage);
 		nokiaControler.currentUser = user;
 		nokiaControler.setQuestions(questionsType);
 		nokiaControler.currentQuestionIndex = 0;
 		nokiaControler.setNokiaSwing(nokiaSwing);
+		
 		nokiaControler.actionPerformed(null);
 		nokiaControler.actionPerformed(null);
 		nokiaControler.actionPerformed(null);
