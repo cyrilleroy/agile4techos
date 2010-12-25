@@ -43,7 +43,6 @@
 		<resources>
 			<resource>
 				<directory>${project.basedir}/src/resources</directory>
-				<targetPath>${project.basedir}/target/classes/resources</targetPath>
 			</resource>
 			<resource>
 				<directory>${project.basedir}/src/org/agile/grenoble</directory>
@@ -268,11 +267,19 @@
 			<version>4.8.2</version>
 			<scope>test</scope>
 		</dependency>
-
-<dependency>
-	<groupId>org.mockito</groupId>
-	<artifactId>mockito-core</artifactId>
-	<version>1.8.4</version>
-</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<version>1.2</version>
+		</dependency><dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.8.5</version>
+		</dependency>
 	</dependencies>
 </project>
