@@ -30,8 +30,7 @@ public class NokiaSwingTest {
 	@Test
 	public void generateQuestionsPanels() throws Exception {
 		NokiaSwing nokiaSwing = new NokiaSwing();
-		JPanel[] questionsPanel1 = nokiaSwing.generateQuestionsPanels(questionsType);
-		JPanel[] questionsPanel = questionsPanel1;
+		JPanel[] questionsPanel = nokiaSwing.generateQuestionsPanels(questionsType);
 		assertThat(questionsPanel.length, equalTo(7));
 	}	
 }
