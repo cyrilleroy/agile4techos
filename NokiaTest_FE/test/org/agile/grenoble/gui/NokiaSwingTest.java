@@ -29,29 +29,9 @@ public class NokiaSwingTest {
 	
 	@Test
 	public void generateQuestionsPanels() throws Exception {
-		JPanel[] questionsPanel = buildPanels();
-		assertThat(questionsPanel.length, equalTo(8));
-	}
-	
-	@Test
-	public void lastPanelIsAScorePanel() throws Exception {
-		JPanel[] questionsPanel = buildPanels();
-		final JPanel scorePanel = questionsPanel[7];
-		assertThat(scorePanel, instanceOf(ScorePanel.class));
-		assertThat(scorePanel, HasTextField.hasTextField(startsWith("Your score is: ")));
-	}
-
-	private JPanel[] buildPanels() throws Exception {
 		NokiaSwing nokiaSwing = new NokiaSwing();
-		JPanel[] questionsPanel = nokiaSwing.generateQuestionsPanels(questionsType);
-		return questionsPanel;
-	}
-	
-	@Test
-	public void scorePanelDisplaysScore() throws Exception {
-		JPanel[] questionsPanel = buildPanels();
-		final ScorePanel scorePanel = (ScorePanel) questionsPanel[7];
-		scorePanel.setScore(56);
-		assertThat(scorePanel, hasTextField(endsWith(" 56")));
-	}
+		JPanel[] questionsPanel1 = nokiaSwing.generateQuestionsPanels(questionsType);
+		JPanel[] questionsPanel = questionsPanel1;
+		assertThat(questionsPanel.length, equalTo(7));
+	}	
 }

@@ -193,14 +193,11 @@ public class NokiaSwing  extends JFrame {
 	 * */
 	protected JPanel[] generateQuestionsPanels(QuestionsType pQuestions) throws Exception {		
 	   int nbQuestions = pQuestions.getQuestionArray().length;
-	   JPanel[] questionsPanels = new JPanel[nbQuestions+1];
+	   JPanel[] questionsPanels = new JPanel[nbQuestions];
 		
 		for (int i=0; i < nbQuestions; i++) {
 			questionsPanels[i] = generateQuestionPanel(pQuestions.getQuestionArray()[i]);
 		}
-		final ScorePanel scorePanel = new ScorePanel("Your score is: ");
-		questionsPanels[7] = scorePanel;
-		scorePanel.setScore(100);
 		
 		return questionsPanels;
 	}
